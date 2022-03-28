@@ -1,4 +1,4 @@
-@startuml Learning platform
+@startuml Learning platform - System context
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
 Person(student, "Person learning chemistry", "")

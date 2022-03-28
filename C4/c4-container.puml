@@ -1,0 +1,22 @@
+@startuml Learning platform - Container
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(student, "Person learning chemistry", "")
+
+System_Boundary(system, "Learning platform"){
+    Container(mobile_app, "Mobile application", "React Native")
+    Container(backend_app, "Backend", "Java")
+    ContainerDb(db, "data storage", "TBD...")
+}
+
+Container_Ext(google, "Google Sign-In", "authentication")
+Container_Ext(facebook, "Facebook Login", "authentication")
+
+Rel(student, mobile_app, "Learns and plays with")
+
+Rel(mobile_app, backend_app, "uses")
+Rel(backend_app, db, "stores data in")
+Rel(backend_app, google, "authenticates user via")
+Rel(backend_app, facebook, "authenticates user via")
+
+@enduml
