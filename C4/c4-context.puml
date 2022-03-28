@@ -1,0 +1,17 @@
+@startuml Learning platform
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(student, "Person learning chemistry", "")
+
+System(system, "Learning platform")
+
+System_Ext(google, "Google", "Authentication provider")
+System_Ext(facebook, "Facebook", "Authentication provider")
+
+Rel(student, system, "learns chemistry using")
+
+Rel(system, google, "authenticates user via")
+Rel(system, facebook, "authenticates user via")
+
+
+@enduml
